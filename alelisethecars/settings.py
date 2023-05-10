@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'users',
     'products',
     'storages',
+    'about.apps.AboutConfig',
+    'contacts.apps.ContactsConfig'
 ]
 
 MIDDLEWARE = [

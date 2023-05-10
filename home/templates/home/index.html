@@ -5,6 +5,18 @@
 
 {% block content %}
 {% load static %}
+ <!-- ***** Preloader Start ***** -->
+ <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
 <div class="main-banner" id="top">
     <video autoplay muted loop id="bg-video">
         <source src="{% static 'assets/images/video.mp4'%}" type="image/png" />
@@ -90,19 +102,9 @@
                     <p>
 
                        
-                        
-                       <p> We have been established moto vehicles dealership since 2007s We have been providing quality vehicles to Government agencies, NGOs, Hospitals, Embassies, Businesses, and private customers at discounted rates.
-                        We offer consumer vehicles and light commercial vehicles from Toyota, Honda, Nissan, Mitsubishi, Mercedes Benz and etc. If you’re looking for cars with Right-hand steering or left-hand steering, diesel or petrol, electric and hybrid.
-                        manual or automatic; we have you covered.
-                        We have ties with major shipping lines and can quote you a CNF rate to your destination, or arrange your own logistics and we will quote you FOB. Pick from thousands of stocks ready for delivery from our yards. Brand New Armored Vehicles are also available from bulletproof grades of BR1 to BR7.and we have built a reputation for being the go-to destination for car shoppers looking for a hassle-free experience. We are committed to providing you with a personalized experience, whether you are buying your first car or adding to your collection.
-                    </p>
-                        
-                       <p> At Al Elise the cars, we believe that the car buying process should be enjoyable and stress-free. That's why our team of friendly and knowledgeable sales professionals is here to guide you through every step of the process. We will work with you to understand your unique needs and help you find the perfect vehicle that fits your lifestyle and budget.
-                        Our inventory is always changing, so be sure to check back often to see the latest additions. Our experienced technicians thoroughly inspect and service every vehicle in our inventory to ensure that they meet our high standards of quality and reliability.
-                        We also offer a range of financing options to help make your dream of owning a new or used car a reality. Our finance team works with a variety of lenders to find you the best rates and terms available, regardless of your credit history.
-                        At Al Elise the cars, we are committed to building long-lasting relationships with our customers. We pride ourselves on providing exceptional customer service, and we are always here to answer any questions you may have. Whether you need help finding the perfect car or have questions about financing, our team is here to help.
-                        Thank you for considering Elise Dubai for your automotive needs. We look forward to helping you find your next vehicle! </p>
-
+            <div class="main-button">
+                <a href="{% url 'about'%}">Read more</a>
+            </div>
                     
                 </div>
             </div>

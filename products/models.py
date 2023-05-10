@@ -57,7 +57,7 @@ class Car(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        ordering = ['title']
+        ordering = ['created']
 
 
         
@@ -68,9 +68,11 @@ class PartCategory(models.Model):
         return self.name
 
 class Part(models.Model):
+    dealer = models.ForeignKey(profile,null=True, blank=True,on_delete=models.SET_NULL)
     category = models.ForeignKey(PartCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    car_models = models.ManyToManyField(Model)
+    name = models.CharField(max_length=50, null=True,blank=True,)
+    make = models.CharField(max_length=50, null=True,blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
     image = models.ImageField(upload_to='static/sparepart_images')

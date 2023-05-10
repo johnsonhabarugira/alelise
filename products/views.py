@@ -1,10 +1,10 @@
 
 from django.shortcuts import render, get_object_or_404
-from .models import Car
+from .models import Car,Part
 from users.models import profile
 from django.http import HttpResponse
 import uuid
-from .utils import searchcars, paginatevehicles
+from .utils import searchcars, paginatevehicles,paginatepart
 from urllib.parse import urlencode
 
 """"""
@@ -32,4 +32,31 @@ def onecar(request, pk):
         'whatsapp_url': whatsapp_url,
     }
     return render(request, 'cars/single-car.html', context)
+ 
+def part_list(request):
+    parts = searchcars(request)
+    custom_range, parts = paginatepart(request, parts,6)
+    query = request.GET.get('q')
+
+
     
+
+
+    if query:
+        custom_range, parts = paginatepart(request, parts,6)
+        parts = Part.objects.filter(name__icontains=query)
+    else:
+        parts = Part.objects.all()
+        custom_range, parts = paginatepart(request, parts,6)
+    context = {
+        'parts': parts,
+        'query': query,
+    }
+    return render(request, 'parts/parts.html',context)
+
+
+    
+def part_detail(request, part_id):
+    part = Part.objects.select_related('dealer').get(pk=part_id)
+    context = {'part': part}
+    return render(request, 'parts/part_detail.html', context)
