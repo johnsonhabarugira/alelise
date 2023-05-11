@@ -80,9 +80,9 @@ nav li a {
         <div class="container">
             <div class="row">
                 <div class="col-12"style="">
-                    <nav class="main-nav" style="padding-top: 10px;">
+                    <nav class="main-nav" style="">
                         <!-- ***** Logo Start ***** -->
-                        <a href="{% url 'home' %}" class="logo"><img style="margin-top: 2px;" src="{% static 'assets/images/logo.png' %}" alt=""></em></a>
+                        <a href="{% url 'home' %}" class="logo"><img style="" src="{% static 'assets/images/logo.png' %}" alt=""></em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -97,7 +97,6 @@ nav li a {
                                     <a class="dropdown-item" href="{% url 'terms' %}">Terms</a>
                                 </div>
                             </li>
-                            <li><a  {% if request.path == '/' %}class="active"{% endif %} href="{% url 'home' %}">Home</a></li>
                             <li><a  {% if request.path == '/vehicles/' %}class="active"{% endif %} href="{% url 'vehicles' %}">Cars</a></li>
                             <li><a  {% if request.path == '/parts/' %}class="active"{% endif %} href="{% url 'parts' %}">Parts</a></li>
                             <li><a  {% if request.path == '/contact/' %}class="active"{% endif %} href="{% url 'contact' %}">contact</a></li> 
