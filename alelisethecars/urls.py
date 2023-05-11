@@ -23,4 +23,9 @@ urlpatterns = [
     path('',include('products.urls')),
     path('',include('about.urls')),
     path('',include('contacts.urls')),
+    path('',include('blog.urls')),
+    path('',include('faq.urls')),
+    path('',include('team.urls')),
+    path('',include('termsandconditions.urls')),
+    path('',include('geolocation.urls')),
 ]

@@ -5,6 +5,63 @@
 
 {% block content %}
 {% load static %}
+{% include 'geolocation/current_country.html'%}
+<style>.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
+  
+  .banner-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-image-url-here');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .banner-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* adjust opacity as needed */
+  }
+  
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* make sure content is on top of overlay */
+  }
+  
+  .banner-content h1 {
+    margin-top: 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  
+  .banner-content .btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+</style>
  <!-- ***** Preloader Start ***** -->
  <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -17,22 +74,32 @@
     </div>
   </div>
   <!-- ***** Preloader End ***** -->
-<div class="main-banner" id="top">
-    <video autoplay muted loop id="bg-video">
-        <source src="{% static 'assets/images/video.mp4'%}" type="image/png" />
-    </video>
 
-    <div class="video-overlay header-text">
-        <div class="caption">
-            <h6>Welcome to our car dealership, where your dream car awaits!</h6>
-            <h2>Best <em>car dealer</em> in Dubai</h2>
-            <div class="main-button">
-                <a href="contact.html">Contact Us</a>
-            </div>
+
+
+
+  
+<section class="banner">
+    {% for banner_image in banner_images %}
+    <div class="banner-image" style="background-image: url('{{ banner_image.image.url }}');">
+      <div class="banner-content">
+        <h1>{{ banner_image.title }}</h1>
+        
+        <div class="main-button">
+            <a href="contact.html">Contact Us</a>
         </div>
+      </div>
     </div>
-</div>
-<!-- ***** Main Banner Area End ***** -->
+    {% endfor %}
+  </section>
+
+
+
+
+
+
+
+
 
 <section class="section" id="trainers">
     <div class="container">
@@ -48,6 +115,7 @@
         <div class="row">
             {% for Car in featurecars|slice:":3" %}
             
+                           <a href="{% url 'carviewer' Car.id %}">
                             <div class="col-lg-4">
                                 <div class="trainer-item">
                                     <div class="image-thumb">
@@ -55,7 +123,7 @@
                                     </div>
                                     <div class="down-content">
                                         <span>
-                                           <del><sup>$</sup>11999 </del> &nbsp; <sup>$</sup>{{ Car.price }}
+                                            <sup>$</sup>{{ Car.price }}
                                         </span>
             
                                         <h4>{{ Car.title}}</h4>
@@ -72,6 +140,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </a> 
             {% endfor %}
         </div>
 

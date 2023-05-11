@@ -35,7 +35,6 @@ class Car(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True)
     model = models.ForeignKey(Model, on_delete=models.CASCADE, related_name='cars')
     year = models.PositiveIntegerField()
-    car_price = models.CharField(max_length=200, blank=True, null=True)
     price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True )
     mileage = models.PositiveIntegerField()
     engine = models.CharField(max_length=50, blank=True, null=True)
@@ -70,8 +69,8 @@ class PartCategory(models.Model):
 class Part(models.Model):
     dealer = models.ForeignKey(profile,null=True, blank=True,on_delete=models.SET_NULL)
     category = models.ForeignKey(PartCategory, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
     name = models.CharField(max_length=50, null=True,blank=True,)
+    model = models.CharField(max_length=50, null=True,blank=True,)
     make = models.CharField(max_length=50, null=True,blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()

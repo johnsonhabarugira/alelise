@@ -7,6 +7,47 @@
 {% load static %}
 
    
+{% include 'geolocation/current_country.html'%}
+<style>
+
+    .floating-btns {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    
+    .floating-btns a {
+      display: block;
+      margin-bottom: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 60px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .btn-call {
+      background-color: #007bff;
+    }
+    
+    .btn-mail {
+      background-color: #6c757d;
+    }
+    
+    .btn-whatsapp {
+      background-color: #28a745;
+    }
+    
+    .floating-btns a:hover {
+      opacity: 0.8;
+    }
+    
+    
+    </style>
 
     <!-- ***** Call to Action Start ***** -->
     <section class="section section-bg" id="call-to-action" style="background-image: url(/static/assets/images/banner-image-1-1920x500.jpg)">
@@ -16,7 +57,8 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Part Details</h2>
+                        <h2><!--<small><del>$12 999</del></small>--> <em>${{ part.price}}</em></h2>
+                        <h2>{{ part.name}}</h2>
                     </div>
                 </div>
             </div>
@@ -83,7 +125,12 @@
                        <div class="col-sm-6">
                             <label> Model</label>
                        
-                            <p>{{ part.category }}</p>
+                            <p>{{ part.model }}</p>
+                       </div>
+                       <div class="col-sm-6">
+                            <label> Category</label>
+                       
+                            <p>{{ category.model }}</p>
                        </div>
 
                     </div>
@@ -124,4 +171,10 @@
     </section>
     <!-- ***** Fleet Ends ***** -->
     
+    <div class="floating-btns">
+        <a class="btn btn-call"target="_blank" href="tel:{{part.dealer.mobile}}?text=I'm%20interested%20in%20the%20car%20you're%20selling" target="_blank"><i class="fa fa-phone"></i></a>
+        <a class="btn btn-whatsapp"target="_blank" href="{{part.dealer.Social_whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <a class="btn-mail" target="_blank" href="mailto:{{part.dealer.email}}?subject=I'm%20interested%20in%20the%20car%20you're%20selling&body=Hi,%20I'm%20interested%20in%20the%20car%20you're%20selling.%20Can%20you%20please%20provide%20me%20with%20more%20details%3F" target="_blank"><i class="fa fa-envelope"></i></a>
+      
+      </div>
 {% endblock %}
