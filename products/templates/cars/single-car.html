@@ -1,12 +1,11 @@
 <!-- home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Cars - Al Elise The Cars{% endblock %}
+{% block title %}{{ viewcar.title}} - Al Elise The Cars{% endblock %}
 
 {% block content %}
 {% load static %}
 
-{% include 'geolocation/current_country.html'%}
 
 <style>
 

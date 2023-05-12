@@ -5,7 +5,6 @@
 
 {% block content %}
 {% load static %}
-{% include 'geolocation/current_country.html'%}
 <style>.banner {
     display: flex;
     justify-content: center;
@@ -212,7 +211,7 @@
                 <img src="{{Post.image.url}}" alt="">
                 <h4>{{ Post.title }}</h4>
 
-                <p><i class="fa fa-user"></i> {{ Post.author }} &nbsp;|&nbsp; <i class="fa fa-calendar"></i> {{ Post.created_at }} &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
+                <p><i class="fa fa-user"></i> {{ Post.author }} &nbsp;|&nbsp; <i class="fa fa-calendar"></i> {{ Post.created_at }} &nbsp;|&nbsp;</p>
 
                 <p> {{ Post.content|slice:":200" }}</p>
                 <div class="main-button">

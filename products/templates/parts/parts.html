@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Cars - Al Elise The Cars{% endblock %}
+{% block title %}Spare Parts - Al Elise The Cars{% endblock %}
 
 {% block content %}
 {% load static %}
 
-{% include 'geolocation/current_country.html'%}
     <!-- ***** Call to Action Start ***** -->
     <section class="section section-bg" id="call-to-action" style="background-image: url(/static/assets/images/banner-image-1-1920x500.jpg)">
         <div class="container">
@@ -75,7 +74,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="{{part.image.url}}"alt="" style="width: 100%;height: 300px;object-fit: cover;">
+                            <img src="{{part.image.url}}"alt="" style="width: 100%;height: 300px;object-fit: scale-down;">
                         </div>
                         <div class="down-content">
                             <span>
