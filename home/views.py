@@ -13,7 +13,7 @@ def home(request):
 
 
     banner_images = BannerImage.objects.filter(active=True)
-    featurecars= Car.objects.filter(featured=True)[:3]
+    featurecars= Car.objects.filter(featured=True).order_by('-created')[:3]
     blogpost= Post.objects.all()
     context = {
         'featurecars': featurecars,

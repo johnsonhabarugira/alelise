@@ -68,5 +68,5 @@ def searchcars(request):
     if request.GET.get('max_price'):
         max_price = request.GET.get('max_price')
     # filter the Car objects based on the search criteria
-    allvehicles = Car.objects.filter(transmission__icontains=transmission,model__name__icontains=model)
+    allvehicles = Car.objects.filter(transmission__icontains=transmission,model__name__icontains=model).select_related('model')
     return allvehicles,model,transmission

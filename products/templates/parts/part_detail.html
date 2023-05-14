@@ -152,15 +152,15 @@
                           <div class="col-sm-6">
                               <label>Whatsapp</label>
   
-                              <p><a href="{{part.dealer.Social_whatsapp}}" class="button">Whatsapp</a></p>
+                              <p><a href="{{part.dealer.Social_whatsapp}}" class="btn btn-success"><i class="fa fa-whatsapp"></i></a></p>
                           </div>
                           <div class="col-sm-6">
                               <label>Mobile phone</label>
-                              <p>{{part.dealer.mobile}}</p>
+                              <p>{{part.dealer.phone_number}}</p>
                           </div>
                           <div class="col-sm-6">
                               <label>Email</label>
-                              <p><a href="#">{{part.dealer.phone_number}}</p>
+                              <p>{{part.dealer.email}}</p>
                           </div>
                   </article>
                 </section>
@@ -171,7 +171,6 @@
     <!-- ***** Fleet Ends ***** -->
     
     <div class="floating-btns">
-        <a class="btn btn-call"target="_blank" href="javascript:window.location.href=encodeURIComponent(window.location.href)" target="_blank"><i class="fa fa-share"></i></a>
         <a class="btn btn-call"target="_blank" href="tel:{{part.dealer.mobile}}?text=I'm%20interested%20in%20the%20car%20you're%20selling" target="_blank"><i class="fa fa-phone"></i></a>
         <a class="btn btn-whatsapp"target="_blank" href="{{part.dealer.Social_whatsapp}}" target="_blank"><i class="fa fa-whatsapp"></i></a>
         <a class="btn-mail" target="_blank" href="mailto:{{part.dealer.email}}?subject=I'm%20interested%20in%20the%20car%20you're%20selling&body=Hi,%20I'm%20interested%20in%20the%20car%20you're%20selling.%20Can%20you%20please%20provide%20me%20with%20more%20details%3F" target="_blank"><i class="fa fa-envelope"></i></a>

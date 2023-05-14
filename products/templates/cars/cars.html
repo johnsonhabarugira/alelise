@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label for="">Model:</label>
                                     <select type="text" name="model">
-                                        <option value="" disabled selected>{{make}}</option>
+                                        <option value="" disabled selected>{{Car.make}}</option>
                                         {% for Car in allvehicles %}
                                         <option value="{{Car.model}}">{{Car.model}}</option>
                                         {% endfor%}
@@ -110,7 +110,7 @@
 
                             <p>
                                 <i class="fa fa-dashboard"></i> {{ Car.mileage }} Km &nbsp;&nbsp;&nbsp;
-                                <i class="fa fa-cube"></i>{{ Car.engine }}  cc &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-cube"></i>{{ Car.engine }}   &nbsp;&nbsp;&nbsp;
                                 <i class="fa fa-cog"></i>   {{Car.transmission}} &nbsp;&nbsp;&nbsp;
                             </p>
 
