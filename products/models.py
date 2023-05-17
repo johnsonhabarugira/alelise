@@ -80,3 +80,6 @@ class Part(models.Model):
 
     def __str__(self):
         return f'{self.category} - {self.name} - ${self.price:.2f}'
+    
+    class Meta:
+        ordering = ['-created']

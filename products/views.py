@@ -69,7 +69,7 @@ def part_list(request):
         custom_range, parts = paginatepart(request, parts,6)
         parts = Part.objects.filter(name__icontains=query)
     else:
-        parts = Part.objects.all().order_by('-created')
+        parts = Part.objects.all()
         custom_range, parts = paginatepart(request, parts,6)
     context = {
         'parts': parts,

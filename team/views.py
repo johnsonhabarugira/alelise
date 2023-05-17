@@ -4,4 +4,4 @@ import requests
 
 def our_team(request):
     team_members = TeamMember.objects.all()
-    return render(request, 'team/our_team.html', {'team_members': team_members,'country':country})
+    return render(request, 'team/our_team.html', {'team_members': team_members})
