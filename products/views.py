@@ -18,14 +18,12 @@ def car_listing(request):
     country = data.get('country')
 
 
-    allvehicles , model, type = searchcars(request)
+    allvehicles , title= searchcars(request)
     custom_range, allvehicles = paginatevehicles(request, allvehicles,6)
     context = {
         'allvehicles': allvehicles,
-        'type':type,
-        'model':model,
+        'title':title,
         'custom_range':custom_range,
-        'country': country,
     }
     return render(request, 'cars/cars.html', context)
 
