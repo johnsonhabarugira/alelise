@@ -107,9 +107,19 @@ import dj_database_url
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'))
 }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alelisedatab',
+        'USER': 'johnsondev',
+        'PASSWORD': 'johnsondev.1',
+        'HOST': 'alelisedatab.cqxvs6nodyt5.eu-north-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
-
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
