@@ -51,13 +51,22 @@ class Car(models.Model):
     image_1 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
     image_2 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
     image_3 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_4 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_5 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_6 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_7 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_8 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_9 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
+    image_10 = models.ImageField(null=True, blank=True, upload_to='static/cars_pic/', default='static/cars_pic/features-first-icon.png')
     featured = models.BooleanField(default=False)
+    # Field to track page visits
+    page_visits = models.PositiveIntegerField(null=True, blank=True, default=0)
     id = models.UUIDField(default=uuid.uuid4, unique=True,primary_key=True,editable=False)
     created = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):
         return self.title
     class Meta:
-        ordering = ['-created']
+        ordering = ['-page_visits']
 
 
         

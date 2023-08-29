@@ -70,7 +70,7 @@
             <div class="row">
                 
 {% for Car in allvehicles %}
-
+            <a href="{% url 'carviewer' Car.id %}">
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
@@ -78,13 +78,13 @@
                         </div>
                         <div class="down-content">
                             <span>
-                               <!-- <del><sup>$</sup>11999 </del>--> &nbsp; <sup>$</sup>{{ Car.price }}
+                                <i class="fa fa-eye"></i>{{ Car.page_visits }} &nbsp;&nbsp;&nbsp;
                             </span>
 
                             <h4>{{ Car.title}}</h4>
 
                             <p>
-                                <i class="fa fa-dashboard"></i> {{ Car.mileage }} Km &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-dashboard"></i> {{ Car.mileage }}&nbsp;&nbsp;&nbsp;
                                 <i class="fa fa-cube"></i>{{ Car.engine }}   &nbsp;&nbsp;&nbsp;
                                 <i class="fa fa-cog"></i>   {{Car.transmission}} &nbsp;&nbsp;&nbsp;
                             </p>
@@ -95,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
 {% endfor %}
             </div>
 

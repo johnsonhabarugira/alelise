@@ -41,6 +41,10 @@ def onecar(request, pk):
     mobile = viewcar.dealer.phone_number # Replace with dynamic mobile number
     params = {'text': message, 'phone': mobile}
     whatsapp_url = f"https://wa.me/{mobile}?{urlencode(params)}"
+    
+    # Increment page visits
+    viewcar.page_visits += 1
+    viewcar.save()
     context = {
         'viewcar': viewcar,
         'whatsapp_url': whatsapp_url,
