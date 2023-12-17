@@ -12,18 +12,6 @@
     <meta name="author" content="Al Elise The Cars">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     {% block head %}{% endblock %}
-    
-    <!-- OpenGraph meta tags for social media sharing -->
-    <meta property="og:title" content="Al Elise The Cars - {{ viewcar.title}}">
-    <meta property="og:description" content="Explore our wide range of new and used cars for sale. Find your perfect vehicle today.">
-    <meta property="og:image" content="{{viewcar.image_1.url}}">
-    <meta property="og:url" content="https://alelisethecars.com">
-    <!-- Twitter Card meta tags for Twitter sharing -->
-    <meta name="twitter:card" content="{{ viewcar.title}}">
-    <meta name="twitter:title" content="Al Elise The Cars - {{ viewcar.title}}">
-    <meta name="twitter:description" content="Explore our wide range of new and used cars for sale. Find your perfect vehicle today.">
-    <meta name="twitter:image" content="{{viewcar.image_1.url}}">
-    
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}">
 

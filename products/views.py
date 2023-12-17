@@ -19,11 +19,10 @@ def car_listing(request):
 
 
     allvehicles , title= searchcars(request)
-    custom_range, allvehicles = paginatevehicles(request, allvehicles,6)
+    #custom_range, allvehicles = paginatevehicles(request, allvehicles,6)
     context = {
         'allvehicles': allvehicles,
         'title':title,
-        'custom_range':custom_range,
     }
     return render(request, 'cars/cars.html', context)
 

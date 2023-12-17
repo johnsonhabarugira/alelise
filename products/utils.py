@@ -29,7 +29,7 @@ def paginatevehicles(request, allvehicles, results):
     
 def paginatepart(request, parts, results):
     page = request.GET.get('page')
-    results = 6
+    results = 2
     paginator = Paginator(parts, results)
     try:
      parts = paginator.page(page)
