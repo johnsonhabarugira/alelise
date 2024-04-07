@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','www.alelisethecars.com', 'alelisethecars.com','127.0.0.1','alelisethecars-v4we.onrender.com','alelise.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://alelise.up.railway.app']
